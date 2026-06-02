@@ -11,15 +11,13 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: #f5f7fb;
             color: #1f2937;
             line-height: 1.5;
         }
-
-        /* ===== ШАПКА (как на ПК) ===== */
+        /* ШАПКА */
         .header-top {
             background: white;
             padding: 12px 16px;
@@ -78,8 +76,7 @@
             font-size: 13px;
             font-weight: 500;
         }
-
-        /* ===== МЕНЮ (горизонтальное, прокручиваемое) ===== */
+        /* МЕНЮ (горизонтальное) */
         .menu-bar {
             background: #1e40af;
             padding: 8px 12px;
@@ -100,8 +97,7 @@
         .menu-bar a:active {
             background: #3b82f6;
         }
-
-        /* ===== ОБЩИЕ БЛОКИ ===== */
+        /* ОБЩИЕ БЛОКИ */
         .container {
             max-width: 600px;
             margin: 0 auto;
@@ -126,8 +122,7 @@
             color: #6b7280;
             margin-bottom: 16px;
         }
-
-        /* ===== ГЛАВНЫЙ ЭКРАН (hero) ===== */
+        /* ГЛАВНЫЙ ЭКРАН */
         .hero {
             background: linear-gradient(135deg, #1e3a8a, #2563eb);
             border-radius: 20px;
@@ -164,37 +159,40 @@
             background: white;
             color: #2563eb;
         }
-
-        /* ===== СЕТКА УСЛУГ ===== */
-        .services-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
+        /* СЕТКИ */
+        .grid-3, .grid-4, .shop-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
         }
-        .service-item-card {
+        .grid-item {
+            text-align: center;
+            padding: 12px;
+        }
+        .service-card {
             background: white;
             border: 1px solid #e5e7eb;
             border-radius: 16px;
             overflow: hidden;
+            margin-bottom: 14px;
         }
         .service-header {
             background: #2563eb;
-            padding: 14px;
+            padding: 12px;
             color: white;
             font-weight: 700;
-            font-size: 16px;
+            font-size: 15px;
         }
         .service-body {
-            padding: 14px;
+            padding: 12px;
         }
         .service-body p {
             font-size: 13px;
-            color: #4b5563;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
         .service-features {
             list-style: none;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
         }
         .service-features li {
             font-size: 12px;
@@ -209,13 +207,6 @@
             font-weight: 600;
             font-size: 13px;
         }
-
-        /* ===== МАГАЗИН (сетка) ===== */
-        .shop-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-        }
         .product-card {
             background: white;
             border: 1px solid #e5e7eb;
@@ -224,34 +215,26 @@
             text-align: center;
         }
         .product-card i {
-            font-size: 32px;
+            font-size: 28px;
             color: #2563eb;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
         .product-card h4 {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
-            margin-bottom: 4px;
-        }
-        .product-card p {
-            font-size: 12px;
-            color: #6b7280;
         }
         .product-price {
             font-weight: bold;
             color: #16a34a;
-            margin-top: 8px;
-            font-size: 14px;
+            margin-top: 6px;
+            font-size: 12px;
         }
-
-        /* ===== ОТЗЫВЫ ===== */
         .review-card {
             background: white;
             border-radius: 16px;
             padding: 14px;
             margin-bottom: 12px;
             border-left: 4px solid #2563eb;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
         }
         .review-name {
             font-weight: bold;
@@ -266,28 +249,19 @@
             font-size: 10px;
             color: #9ca3af;
         }
-
-        /* ===== КОНТАКТЫ ===== */
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
         .contact-line {
             display: flex;
             align-items: center;
             gap: 12px;
             font-size: 14px;
+            padding: 8px 0;
         }
         .requisites {
             background: #f3f4f6;
             border-radius: 16px;
             padding: 14px;
-            margin-top: 12px;
             font-size: 12px;
         }
-
-        /* ===== ФУТЕР ===== */
         .footer {
             background: #1e40af;
             color: white;
@@ -298,14 +272,43 @@
         }
         .footer a {
             color: white;
-            text-decoration: none;
         }
-
         .hidden-section {
             display: none;
         }
         .active-section {
             display: block;
+        }
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .step {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        .step-num {
+            background: #2563eb;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .schedule-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .schedule-row {
+            display: flex;
+            justify-content: space-between;
         }
     </style>
 </head>
@@ -314,38 +317,32 @@
 <!-- ШАПКА -->
 <div class="header-top">
     <div class="logo-area">
-        <div class="logo-icon">
-            <i class="fas fa-tools"></i>
-        </div>
+        <div class="logo-icon"><i class="fas fa-tools"></i></div>
         <div class="logo-text">
             <h1>ООО "СИНТЕЗ"</h1>
             <p>Сервисный центр в Рубцовске</p>
         </div>
     </div>
     <div class="contact-row-mobile">
-        <a href="tel:+73855740542" class="phone-link">
-            <i class="fas fa-phone-alt"></i> (38557) 4-05-42
-        </a>
-        <a href="tel:+79635181898" class="phone-link">
-            <i class="fas fa-mobile-alt"></i> 8-963-518-18-98
-        </a>
-        <a href="#contact" class="callback-btn" id="mobile-callback-link">Заказать звонок</a>
+        <a href="tel:+73855740542" class="phone-link"><i class="fas fa-phone-alt"></i> (38557) 4-05-42</a>
+        <a href="tel:+79635181898" class="phone-link"><i class="fas fa-mobile-alt"></i> 8-963-518-18-98</a>
+        <a href="tel:+73855740542" class="callback-btn">Заказать звонок</a>
     </div>
 </div>
 
-<!-- МЕНЮ (5 разделов) -->
+<!-- МЕНЮ -->
 <div class="menu-bar">
     <a href="#" data-section="home">🏠 Главная</a>
     <a href="#" data-section="services">🛠️ Услуги</a>
     <a href="#" data-section="shop">📦 Магазин</a>
     <a href="#" data-section="about">📖 О нас</a>
+    <a href="#" data-section="requisites">📄 Реквизиты</a>
     <a href="#" data-section="contacts">📞 Контакты</a>
 </div>
 
-<!-- КОНТЕЙНЕР ДЛЯ ВСЕХ РАЗДЕЛОВ -->
 <div class="container" id="sections-container">
     
-    <!-- РАЗДЕЛ: ГЛАВНАЯ -->
+    <!-- ===== РАЗДЕЛ: ГЛАВНАЯ ===== -->
     <div id="home-section" class="section active-section">
         <div class="hero">
             <h2>Профессиональный <span style="color:#facc15;">ремонт техники</span></h2>
@@ -358,126 +355,75 @@
 
         <div class="card">
             <h3 class="section-title">Почему мы?</h3>
-            <div style="display:flex; flex-direction:column; gap:12px;">
-                <div><i class="fas fa-check-circle" style="color:#2563eb;"></i> <strong>Профессионализм</strong><br>Большой опыт и высокая квалификация</div>
-                <div><i class="fas fa-clock" style="color:#2563eb;"></i> <strong>Оперативность</strong><br>Быстро и качественно</div>
-                <div><i class="fas fa-users" style="color:#2563eb;"></i> <strong>Индивидуальный подход</strong><br>К каждому клиенту</div>
+            <div class="grid-3">
+                <div class="grid-item"><i class="fas fa-check-circle" style="color:#2563eb; font-size:28px;"></i><br><strong>Профессионализм</strong><br><small>Большой опыт</small></div>
+                <div class="grid-item"><i class="fas fa-clock" style="color:#2563eb; font-size:28px;"></i><br><strong>Оперативность</strong><br><small>Быстро и качественно</small></div>
+                <div class="grid-item"><i class="fas fa-users" style="color:#2563eb; font-size:28px;"></i><br><strong>Индивидуальный подход</strong><br><small>К каждому клиенту</small></div>
             </div>
         </div>
 
         <div class="card">
             <h3 class="section-title">Наши достижения</h3>
-            <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:12px; text-align:center;">
-                <div><i class="fas fa-users" style="font-size:28px; color:#2563eb;"></i><br><strong>1000+</strong><br>Довольных клиентов</div>
-                <div><i class="fas fa-check-circle" style="font-size:28px; color:#2563eb;"></i><br><strong>5000+</strong><br>Выполненных работ</div>
-                <div><i class="fas fa-clock" style="font-size:28px; color:#2563eb;"></i><br><strong>10+</strong><br>Лет опыта</div>
-                <div><i class="fas fa-star" style="font-size:28px; color:#2563eb;"></i><br><strong>4.5/5</strong><br>Средняя оценка</div>
+            <div class="grid-4">
+                <div class="grid-item"><i class="fas fa-users" style="font-size:28px; color:#2563eb;"></i><br><strong>1000+</strong><br>Довольных клиентов</div>
+                <div class="grid-item"><i class="fas fa-check-circle" style="font-size:28px; color:#2563eb;"></i><br><strong>5000+</strong><br>Выполненных работ</div>
+                <div class="grid-item"><i class="fas fa-clock" style="font-size:28px; color:#2563eb;"></i><br><strong>10+</strong><br>Лет опыта</div>
+                <div class="grid-item"><i class="fas fa-star" style="font-size:28px; color:#2563eb;"></i><br><strong>4.5/5</strong><br>Средняя оценка</div>
             </div>
         </div>
+
+        <div class="card">
+            <h3 class="section-title">Что говорят наши клиенты</h3>
+            <div class="review-card"><div class="review-name">Иван Петров ★★★★★</div><div class="review-text">"Отличный сервис! Починили телевизор за один день..."</div><div class="review-date">12.07.2025</div></div>
+            <div class="review-card"><div class="review-name">Алексей Иванов ★★★★★</div><div class="review-text">"Очень доволен работой сервиса! Мастера приехали вовремя..."</div><div class="review-date">15.07.2025</div></div>
+            <div class="review-card"><div class="review-name">Ольга Смирнова ★★★★★</div><div class="review-text">"Пришла с неработающей стиральной машиной. Диагностировали быстро..."</div><div class="review-date">03.05.2025</div></div>
+        </div>
+
+        <!-- Боковые панели (вынесены вниз) -->
+        <div class="card"><h3 class="section-title">Нужен ремонт техники?</h3><p>Оставьте заявку прямо сейчас и получите бесплатную диагностику!</p><a href="tel:+73855740542" class="hero-btn primary" style="display:inline-block; margin-top:10px;">📞 Заказать звонок</a></div>
+        <div class="card"><h3 class="section-title">Наш процесс</h3><div class="process-steps"><div class="step"><div class="step-num">1</div><div><strong>Прием техники</strong><br>Вы приносите технику или вызываете мастера</div></div><div class="step"><div class="step-num">2</div><div><strong>Диагностика</strong><br>Бесплатно и определение стоимости</div></div><div class="step"><div class="step-num">3</div><div><strong>Ремонт</strong><br>Согласование и выполнение</div></div><div class="step"><div class="step-num">4</div><div><strong>Выдача</strong><br>Проверка и гарантия</div></div></div></div>
+        <div class="card"><h3 class="section-title">График работы</h3><div class="schedule-list"><div class="schedule-row"><span>Понедельник</span><span>9:00 - 18:00</span></div><div class="schedule-row"><span>Вторник</span><span>9:00 - 18:00</span></div><div class="schedule-row"><span>Среда</span><span>9:00 - 18:00</span></div><div class="schedule-row"><span>Четверг</span><span>9:00 - 18:00</span></div><div class="schedule-row"><span>Пятница</span><span>9:00 - 18:00</span></div><div class="schedule-row"><span>Суббота</span><span>10:00 - 16:00</span></div><div class="schedule-row"><span>Воскресенье</span><span>Выходной</span></div></div></div>
     </div>
 
-    <!-- РАЗДЕЛ: УСЛУГИ -->
+    <!-- ===== УСЛУГИ (все 9 видов) ===== -->
     <div id="services-section" class="section hidden-section">
-        <div class="card">
-            <h3 class="section-title">Ремонт техники любой сложности</h3>
-            <p class="section-subtitle">Все виды бытовой и цифровой техники</p>
-            <div class="services-grid">
-                <div class="service-item-card">
-                    <div class="service-header"><i class="fas fa-tv"></i> Ремонт телевизоров</div>
-                    <div class="service-body">
-                        <p>Диагностика и ремонт ЖК, LED и плазменных телевизоров.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check-circle" style="color:#16a34a;"></i> Диагностика бесплатно</li>
-                            <li><i class="fas fa-check-circle" style="color:#16a34a;"></i> Гарантия до 2 лет</li>
-                            <li><i class="fas fa-check-circle" style="color:#16a34a;"></i> Выезд мастера</li>
-                        </ul>
-                        <a href="#contact" class="order-link">Заказать ремонт →</a>
-                    </div>
-                </div>
-                <div class="service-item-card">
-                    <div class="service-header"><i class="fas fa-blender"></i> Ремонт бытовой техники</div>
-                    <div class="service-body">
-                        <p>Холодильники, стиральные машины, микроволновки, пылесосы.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check-circle" style="color:#16a34a;"></i> Оригинальные запчасти</li>
-                            <li><i class="fas fa-check-circle" style="color:#16a34a;"></i> Ремонт в день обращения</li>
-                            <li><i class="fas fa-check-circle" style="color:#16a34a;"></i> Гарантия 1 год</li>
-                        </ul>
-                        <a href="#contact" class="order-link">Заказать ремонт →</a>
-                    </div>
-                </div>
-                <div class="service-item-card">
-                    <div class="service-header"><i class="fas fa-laptop"></i> Ремонт компьютеров</div>
-                    <div class="service-body">
-                        <p>ПК, ноутбуки, моноблоки. Чистка, замена термопасты.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check-circle" style="color:#16a34a;"></i> Восстановление данных</li>
-                            <li><i class="fas fa-check-circle" style="color:#16a34a;"></i> Апгрейд системы</li>
-                            <li><i class="fas fa-check-circle" style="color:#16a34a;"></i> Установка ПО</li>
-                        </ul>
-                        <a href="#contact" class="order-link">Заказать ремонт →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="card"><h3 class="section-title">Ремонт техники любой сложности</h3><p>Все виды бытовой и цифровой техники</p></div>
+        <div class="service-card"><div class="service-header"><i class="fas fa-tv"></i> Ремонт телевизоров</div><div class="service-body"><p>Диагностика и ремонт ЖК, LED и плазменных телевизоров.</p><ul class="service-features"><li>✅ Диагностика бесплатно</li><li>✅ Гарантия до 2 лет</li><li>✅ Выезд мастера</li></ul><a href="#contacts-section" class="order-link">Заказать ремонт →</a></div></div>
+        <div class="service-card"><div class="service-header"><i class="fas fa-blender"></i> Ремонт бытовой техники</div><div class="service-body"><p>Холодильники, стиральные машины, микроволновки, пылесосы.</p><ul class="service-features"><li>✅ Оригинальные запчасти</li><li>✅ Ремонт в день обращения</li><li>✅ Гарантия 1 год</li></ul><a href="#contacts-section" class="order-link">Заказать ремонт →</a></div></div>
+        <div class="service-card"><div class="service-header"><i class="fas fa-tools"></i> Ремонт электроинструмента</div><div class="service-body"><p>Дрели, перфораторы, болгарки, шуруповерты.</p><ul class="service-features"><li>✅ Ремонт двигателей</li><li>✅ Замена щеток</li><li>✅ Ремонт аккумуляторов</li></ul><a href="#contacts-section" class="order-link">Заказать ремонт →</a></div></div>
+        <div class="service-card"><div class="service-header"><i class="fas fa-laptop"></i> Ремонт компьютеров и ноутбуков</div><div class="service-body"><p>ПК, ноутбуки, моноблоки. Чистка, замена термопасты.</p><ul class="service-features"><li>✅ Восстановление данных</li><li>✅ Апгрейд системы</li><li>✅ Установка ПО</li></ul><a href="#contacts-section" class="order-link">Заказать ремонт →</a></div></div>
+        <div class="service-card"><div class="service-header"><i class="fas fa-tv"></i> Ремонт ТВ-приставок</div><div class="service-body"><p>Цифровые и спутниковые приставки.</p><ul class="service-features"><li>✅ Настройка каналов</li><li>✅ Ремонт пультов ДУ</li><li>✅ Гарантия 6 месяцев</li></ul><a href="#contacts-section" class="order-link">Заказать ремонт →</a></div></div>
+        <div class="service-card"><div class="service-header"><i class="fas fa-weight-hanging"></i> Ремонт электронных весов</div><div class="service-body"><p>Калибровка, замена тензодатчиков.</p><ul class="service-features"><li>✅ Ремонт промышленных весов</li><li>✅ Кухонных весов</li><li>✅ Торговых весов</li></ul><a href="#contacts-section" class="order-link">Заказать ремонт →</a></div></div>
+        <div class="service-card"><div class="service-header"><i class="fas fa-print"></i> Ремонт оргтехники</div><div class="service-body"><p>Принтеры, МФУ, сканеры, копиры.</p><ul class="service-features"><li>✅ Вызов курьера</li><li>✅ Оригинальные расходники</li><li>✅ Гарантия 6 месяцев</li></ul><a href="#contacts-section" class="order-link">Заказать ремонт →</a></div></div>
+        <div class="service-card"><div class="service-header"><i class="fas fa-utensils"></i> Ремонт кухонной техники</div><div class="service-body"><p>Мультиварки, блендеры, мясорубки, кофеварки.</p><ul class="service-features"><li>✅ Ремонт в день обращения</li><li>✅ Оригинальные запчасти</li><li>✅ Гарантия 3 месяца</li></ul><a href="#contacts-section" class="order-link">Заказать ремонт →</a></div></div>
+        <div class="service-card"><div class="service-header"><i class="fas fa-car"></i> Ремонт автосигнализаций</div><div class="service-body"><p>Диагностика, ремонт брелоков, настройка автозапуска.</p><ul class="service-features"><li>✅ Ремонт брелоков</li><li>✅ Настройка автозапуска</li><li>✅ Гарантия 1 год</li></ul><a href="#contacts-section" class="order-link">Заказать ремонт →</a></div></div>
     </div>
 
-    <!-- РАЗДЕЛ: МАГАЗИН -->
+    <!-- ===== МАГАЗИН ===== -->
     <div id="shop-section" class="section hidden-section">
-        <div class="card">
-            <h3 class="section-title">Запчасти и комплектующие</h3>
-            <div class="shop-grid">
-                <div class="product-card"><i class="fas fa-microchip"></i><h4>Микросхемы</h4><p>от 50 ₽</p></div>
-                <div class="product-card"><i class="fas fa-bolt"></i><h4>Конденсаторы</h4><p>от 20 ₽</p></div>
-                <div class="product-card"><i class="fas fa-charging-station"></i><h4>Резисторы</h4><p>от 10 ₽</p></div>
-                <div class="product-card"><i class="fas fa-project-diagram"></i><h4>Транзисторы</h4><p>от 30 ₽</p></div>
-                <div class="product-card"><i class="fas fa-fan"></i><h4>Моторы</h4><p>от 1500 ₽</p></div>
-                <div class="product-card"><i class="fas fa-temperature-high"></i><h4>ТЭНы</h4><p>от 500 ₽</p></div>
-            </div>
-        </div>
+        <div class="card"><h3 class="section-title">Запчасти и комплектующие</h3><p>Широкий ассортимент для ремонта техники</p></div>
+        <div class="card"><h4>Радиодетали</h4><div class="shop-grid"><div class="product-card"><i class="fas fa-microchip"></i><h4>Микросхемы</h4><div class="product-price">от 50 ₽</div></div><div class="product-card"><i class="fas fa-bolt"></i><h4>Конденсаторы</h4><div class="product-price">от 20 ₽</div></div><div class="product-card"><i class="fas fa-charging-station"></i><h4>Резисторы</h4><div class="product-price">от 10 ₽</div></div><div class="product-card"><i class="fas fa-project-diagram"></i><h4>Транзисторы</h4><div class="product-price">от 30 ₽</div></div></div></div>
+        <div class="card"><h4>Запчасти для техники</h4><div class="shop-grid"><div class="product-card"><i class="fas fa-fan"></i><h4>Моторы</h4><div class="product-price">от 1500 ₽</div></div><div class="product-card"><i class="fas fa-temperature-high"></i><h4>ТЭНы</h4><div class="product-price">от 500 ₽</div></div><div class="product-card"><i class="fas fa-door-open"></i><h4>Уплотнители</h4><div class="product-price">от 800 ₽</div></div><div class="product-card"><i class="fas fa-plug"></i><h4>Шнуры питания</h4><div class="product-price">от 200 ₽</div></div></div></div>
+        <div class="card"><h4>Пульты ДУ</h4><div class="shop-grid"><div class="product-card"><i class="fas fa-tv"></i><h4>Для телевизоров</h4><div class="product-price">от 500 ₽</div></div><div class="product-card"><i class="fas fa-wind"></i><h4>Для кондиционеров</h4><div class="product-price">от 800 ₽</div></div><div class="product-card"><i class="fas fa-gamepad"></i><h4>Для приставок</h4><div class="product-price">от 1000 ₽</div></div><div class="product-card"><i class="fas fa-home"></i><h4>Универсальные</h4><div class="product-price">от 600 ₽</div></div></div></div>
     </div>
 
-    <!-- РАЗДЕЛ: О НАС -->
+    <!-- ===== О НАС ===== -->
     <div id="about-section" class="section hidden-section">
-        <div class="card">
-            <h3 class="section-title">ООО "СИНТЕЗ" - Сервисный центр</h3>
-            <p>Более 15 лет мы предоставляем профессиональные услуги по ремонту техники в Рубцовске.</p>
-        </div>
-        <div class="card">
-            <h3 class="section-title">Наша история</h3>
-            <p>Основан в 2000 году с небольшой мастерской. Выросли в крупный сервисный центр.</p>
-            <p>В 2015 году первыми внедрили систему электронной очереди и онлайн-записи.</p>
-        </div>
-        <div class="card">
-            <h3 class="section-title">Наша миссия</h3>
-            <p>Ваша рабочая техника - наша забота!</p>
-        </div>
+        <div class="card"><h3 class="section-title">ООО "СИНТЕЗ" - Сервисный центр</h3><p>Более 15 лет мы предоставляем профессиональные услуги по ремонту техники в Рубцовске.</p></div>
+        <div class="card"><h3 class="section-title">Наша история</h3><p>Основан в 2000 году с небольшой мастерской. Выросли в крупный сервисный центр, обслуживающий весь Рубцовск и прилегающие районы.</p><p>В 2015 году первыми внедрили систему электронной очереди и онлайн-записи.</p></div>
+        <div class="card"><h3 class="section-title">Наша миссия</h3><p>Ваша рабочая техника - наша забота!</p></div>
     </div>
 
-    <!-- РАЗДЕЛ: КОНТАКТЫ -->
+    <!-- ===== РЕКВИЗИТЫ ===== -->
+    <div id="requisites-section" class="section hidden-section">
+        <div class="card"><h3 class="section-title">Реквизиты компании</h3><div class="requisites"><strong>Полное наименование:</strong> Общество с ограниченной ответственностью "СИНТЕЗ"<br><br><strong>Юридический адрес:</strong> 658200, Алтайский край, г. Рубцовск, ул. Комсомольская, 212<br><br><strong>ИНН:</strong> 1234567890<br><strong>КПП:</strong> 123456789<br><strong>ОГРН:</strong> 1234567890123<br><strong>ОКПО:</strong> 12345678</div></div>
+    </div>
+
+    <!-- ===== КОНТАКТЫ ===== -->
     <div id="contacts-section" class="section hidden-section">
-        <div class="card">
-            <h3 class="section-title">Свяжитесь с нами</h3>
-            <div class="contact-info">
-                <div class="contact-line"><i class="fas fa-phone-alt"></i> (38557) 4-05-42</div>
-                <div class="contact-line"><i class="fas fa-mobile-alt"></i> 8-963-518-18-98</div>
-                <div class="contact-line"><i class="fas fa-envelope"></i> pochta@syntez-rub.ru</div>
-                <div class="contact-line"><i class="fas fa-map-marker-alt"></i> г. Рубцовск, ул. Комсомольская, 212</div>
-            </div>
-        </div>
-        <div class="card">
-            <h3 class="section-title">Режим работы</h3>
-            <p>Пн-Пт: 9:00 – 18:00</p>
-            <p>Сб-Вс: 9:00 – 16:00</p>
-        </div>
-        <div class="card">
-            <h3 class="section-title">Реквизиты</h3>
-            <div class="requisites">
-                ИНН: 1234567890<br>
-                КПП: 123456789<br>
-                ОГРН: 1234567890123
-            </div>
-        </div>
+        <div class="card"><h3 class="section-title">Свяжитесь с нами</h3><div class="contact-line"><i class="fas fa-phone-alt"></i> (38557) 4-05-42</div><div class="contact-line"><i class="fas fa-mobile-alt"></i> 8-963-518-18-98</div><div class="contact-line"><i class="fas fa-envelope"></i> pochta@syntez-rub.ru</div><div class="contact-line"><i class="fas fa-map-marker-alt"></i> г. Рубцовск, ул. Комсомольская, 212</div></div>
+        <div class="card"><h3 class="section-title">Режим работы</h3><p>Пн-Пт: 9:00 – 18:00</p><p>Сб-Вс: 9:00 – 16:00</p></div>
+        <div class="card"><h3 class="section-title">Директор</h3><p>Сюсюкалов Андрей Викторович<br>Телефон: 8-963-518-18-98<br>Email: director@syntez-rub.ru</p></div>
     </div>
 </div>
 
@@ -487,15 +433,14 @@
 </footer>
 
 <script>
-    // Переключение разделов
     const sections = {
         home: document.getElementById('home-section'),
         services: document.getElementById('services-section'),
         shop: document.getElementById('shop-section'),
         about: document.getElementById('about-section'),
+        requisites: document.getElementById('requisites-section'),
         contacts: document.getElementById('contacts-section')
     };
-
     function showSection(sectionId) {
         Object.keys(sections).forEach(key => {
             sections[key].classList.add('hidden-section');
@@ -505,31 +450,19 @@
         sections[sectionId].classList.add('active-section');
         window.scrollTo(0, 0);
     }
-
     document.querySelectorAll('.menu-bar a').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const section = link.getAttribute('data-section');
-            if (section && sections[section]) {
-                showSection(section);
-            }
+            if (section && sections[section]) showSection(section);
         });
     });
-
-    // Обработка кнопок "Заказать звонок" и "Наши услуги"
     document.querySelectorAll('[data-section="services"]').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             showSection('services');
         });
     });
-
-    document.getElementById('mobile-callback-link').addEventListener('click', (e) => {
-        e.preventDefault();
-        window.location.href = 'tel:+73855740542';
-    });
-
-    // При клике на "Заказать ремонт" (переход в контакты)
     document.querySelectorAll('.order-link').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -537,6 +470,5 @@
         });
     });
 </script>
-
 </body>
 </html>
