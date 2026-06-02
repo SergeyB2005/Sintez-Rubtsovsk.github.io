@@ -100,9 +100,23 @@
             opacity: 1;
             visibility: visible;
         }
-        .container.mx-auto.px-4 {
-    max-width: 1024px;
+       .container.mx-auto.px-4 {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 100px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
     
+}
+        img {
+    max-width: 100%;
+    height: auto;
+}
+        @media (max-width: 768px) {
+    .fixed.right-0.top-1\/2 {
+        display: none;
+    }
 }
     </style>
      <header class="sticky top-0 z-50">
