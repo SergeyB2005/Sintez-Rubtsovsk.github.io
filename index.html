@@ -5,6 +5,7 @@
     <meta name="google-site-verification" content="zcJ7Ymy_XVnVZiugXY_
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Syntez-rub.ru</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -14,7 +15,92 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <style>
+    <style>/* ——— АДАПТАЦИЯ ПОД ТЕЛЕФОНЫ (ДО 768px) ——— */
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Контейнеры */
+    .container, .wrapper, header, main, footer {
+        width: 95%;
+        padding: 10px;
+        margin: 0 auto;
+    }
+
+    /* Гибкие картинки */
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Сетка услуг / товаров */
+    .services, .products, .catalog, .grid, .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card, .product-card, .card {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    /* Навигация */
+    nav ul, .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    nav li, .menu li {
+        margin: 5px 0;
+        list-style: none;
+    }
+
+    /* Шапка */
+    header {
+        text-align: center;
+    }
+
+    /* Текст */
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Боковые панели */
+    .sidebar, .aside, .panel {
+        width: 100%;
+        margin: 15px 0;
+    }
+
+    /* Таблицы (если есть) */
+    table {
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* Формы и кнопки */
+    button, .btn, .button {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    input, textarea, select {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
         .header-gradient {
             background: linear-gradient(90deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%);
         }
