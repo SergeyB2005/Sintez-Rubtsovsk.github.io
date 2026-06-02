@@ -1,4 +1,140 @@
+/* ========== АДАПТАЦИЯ ПОД ВСЕ УСТРОЙСТВА ========== */
 
+/* Планшеты и телефоны (ширина меньше 1024px) */
+@media (max-width: 1024px) {
+    .container.mx-auto.px-4 {
+        max-width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .up {
+        padding-left: 20px;
+        padding-right: 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .text_sintez_center {
+        text-align: center;
+    }
+    .section_two_container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+/* Телефоны (ширина меньше 768px) */
+@media (max-width: 768px) {
+    /* Шапка и логотип */
+    .flex.items-center.space-x-5 {
+        justify-content: center;
+    }
+    .contact-row-mobile, 
+    .flex.flex-col.sm\:flex-row.items-center.gap-5.sm\:gap-8 {
+        flex-direction: column;
+        width: 100%;
+    }
+    .phone-button {
+        width: 100%;
+    }
+    .bg-blue-600.hover\:bg-blue-700.text-white.px-4.py-2.rounded-lg {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    /* Меню — делаем горизонтальную прокрутку */
+    nav.flex.flex-wrap.justify-center {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        gap: 8px;
+        padding-bottom: 8px;
+        -webkit-overflow-scrolling: touch;
+    }
+    nav.flex.flex-wrap.justify-center a {
+        white-space: nowrap;
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+    
+    /* Сетка карточек услуг и товаров — 1 колонка */
+    .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3.gap-8,
+    .grid.grid-cols-2.md\:grid-cols-3.lg\:grid-cols-4.gap-6 {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Карточки услуг */
+    .service-card {
+        width: 100%;
+    }
+    .h-60 {
+        height: 180px;
+    }
+    
+    /* Текст */
+    .Main_Heading {
+        font-size: 28px !important;
+    }
+    .Description_Text {
+        font-size: 14px !important;
+    }
+    .text-3xl.md\:text-4xl {
+        font-size: 22px !important;
+    }
+    h1, h2, h3 {
+        word-break: break-word;
+    }
+    
+    /* Изображения */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Формы и кнопки */
+    input, textarea, button {
+        font-size: 16px !important; /* чтобы не масштабировалось на iPhone */
+    }
+    
+    /* Контакты */
+    .contact-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+    
+    /* Боковые панели (которые справа) — скрываем или делаем внизу */
+    .fixed.right-0.top-1\/2 {
+        display: none;
+    }
+    
+    /* Подвал */
+    footer .flex.flex-col.md\:flex-row {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+}
+
+/* Очень маленькие телефоны (до 480px) */
+@media (max-width: 480px) {
+    .hero-image {
+        background-attachment: scroll !important;
+        height: auto !important;
+        min-height: 500px;
+    }
+    .bitton_conteiner {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .Primary_Button1, .Primary_Button2 {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+    .text_section_one {
+        margin-top: 30px;
+        padding: 20px 10px;
+    }
+}
 .p-10 {
     padding: 0px; 
 }
